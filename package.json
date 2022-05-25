@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-jsoneditor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
@@ -24,9 +24,9 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "broccoli-funnel": "^1.0.1",
-    "broccoli-merge-trees": "^1.1.1",
-    "ember-cli-babel": "^6.16.0"
+    "broccoli-funnel": "^3.0.8",
+    "broccoli-merge-trees": "^4.2.0",
+    "ember-cli-babel": "^7.26.11"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
