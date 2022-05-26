@@ -2,7 +2,7 @@
 
 import Component from '@ember/component';
 
-import { run } from '@ember/runloop';
+import { scheduleOnce, cancel } from '@ember/runloop';
 import { merge } from '@ember/polyfills';
 import { isEmpty, isNone } from '@ember/utils';
 import { defineProperty, observer, computed } from '@ember/object';
@@ -36,7 +36,7 @@ export default Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    this._createEditorPid = run.scheduleOnce('afterRender', this, this.createEditor);
+    this._createEditorPid = scheduleOnce('afterRender', this, this.createEditor);
   },
 
   destroy() {
@@ -48,7 +48,7 @@ export default Component.extend({
       editor.destroy();
     }
 
-    run.cancel(this._createEditorPid);
+    cancel(this._createEditorPid);
   },
 
   createEditor: observer('options', function() {
